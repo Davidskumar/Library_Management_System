@@ -73,6 +73,30 @@ A lightweight Flask-based RESTful API for managing books and members in a librar
    - Since data is stored in memory, concurrent access or modification may lead to data inconsistencies.
 5. **Scalability**:
    - The current implementation is not optimized for large-scale usage or deployment.
+## Example Output
+
+[
+  {
+    "author": "Richard Dawkins",
+    "id": 1,
+    "title": "The Selfish Gene"
+  },
+  {
+    "author": "Harper Lee",
+    "id": 2,
+    "title": "To Kill a Mockingbird (Updated Edition)"
+  },
+  {
+    "author": "George Orwell",
+    "id": 3,
+    "title": "1984"
+  },
+  {
+    "author": "Richard Dawkins",
+    "id": 4,
+    "title": "The Selfish Gene(Updated Edition)"
+  }
+]
 
 ---
 
