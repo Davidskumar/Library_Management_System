@@ -2,21 +2,17 @@ from flask import Flask, jsonify, request, abort
 
 app = Flask(__name__)
 
-# In-memory storage for books and members
 books = []
 members = []
-users = {'admin': 'password'}  # Hardcoded user for authentication (username: admin, password: password)
+users = {'admin': 'password'} #(username: admin, password: password)
 sessions = {}
 
-# Helper Functions
 def generate_id(data_list):
-    """Generates a unique ID based on the list size."""
     return len(data_list) + 1
 
 def is_authenticated(token):
     return token in sessions.values()
 
-# Routes for Books
 @app.route('/books', methods=['GET'])
 def get_books():
     token = request.headers.get('Authorization')
@@ -86,7 +82,6 @@ def delete_book(book_id):
     books.remove(book)
     return '', 204
 
-# Routes for Members
 @app.route('/members', methods=['GET'])
 def get_members():
     token = request.headers.get('Authorization')
@@ -139,7 +134,6 @@ def delete_member(member_id):
     members.remove(member)
     return '', 204
 
-# Authentication
 @app.route('/login', methods=['POST'])
 def login():
     credentials = request.json
